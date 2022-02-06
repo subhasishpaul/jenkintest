@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World from Git SCM test'
+                echo 'Hello World from Git SCM.'
+                echo 'End to end automation including email sending.'
             }
         }
         stage('Build') {

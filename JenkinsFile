@@ -18,5 +18,12 @@ pipeline {
                 echo 'Deploying application'
             }
         }
+        stage('Sending Email') {
+            steps {
+                echo 'Sending Email'
+                emailext body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: ECheck console output at $BUILD_URL to view the results.''', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'subhasish2077@gmail.com'
+            }
+        }
+        
     }
 }
